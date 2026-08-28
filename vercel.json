@@ -2,7 +2,6 @@
     "cleanUrls": true,
     "rewrites": [
         {
-            "comment": "================ Pertemuan 3 (HTML) ================",
             "source": "/aktivitas/tugas_html_25071103537.html",
             "destination": "/aktivitas/Pertemuan3/Aldiraj_Damar/tugas_html_25071103537.html"
         },
@@ -19,7 +18,6 @@
             "destination": "/aktivitas/Pertemuan3/Shabrina_Hilwa/tugas_html_25071206575.html"
         },
         {
-            "comment": "================ Pertemuan 4 (CSS) ================",
             "source": "/aktivitas/tugas_css_25071103537.html",
             "destination": "/aktivitas/Pertemuan4/Aldiraj_Damar/tugas_css_25071103537.html"
         },
