@@ -1,0 +1,91 @@
+#judul{
+
+    font-size: 7px;
+    vertical-align: auto;
+    text-align: center;
+}
+#judul h1{
+    color: black;
+    background-color: aqua;
+    display: inline-block;
+    padding: 5px 10px;
+}
+
+.kepala{
+    color: white;
+    font-size: 12px;
+    background-color: blue;
+    font-weight: 700;
+    display: inline-block;
+    padding: 1px 3px;
+
+}
+.stabilo {
+    background-color: rgb(0, 255, 0);
+    color: black;
+    padding:2px 6px;
+
+}
+.stabiloKuning {
+    background-color: yellow;
+    color: black;
+    padding: 2px 6px;
+}
+p{
+    text-align: justify;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.underline_garisMiring{
+    font-style: italic;
+    text-decoration: underline;
+}
+.hurufBiru{
+    color: blue;
+    font-weight: bold;
+}
+.tombol-link{
+    color:blue;
+    font-weight:bold;
+    text-decoration: underline;
+    transition : color 0.4s ease;
+}
+
+.tombol-link:visited {
+    color: red;
+}
+.tombol-link:hover{
+    color:red;
+    
+}
+.tabel-kosong{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.tabel-kosong td{
+    border: 1px solid black;
+    padding: 12px;
+    color:red;
+    font-weight: bold;
+    width: 33.33%;
+    vertical-align: middle;
+}
+
+ol{
+    margin: 0;
+    padding-left:  20px;
+}
+li{
+    color: black;
+    font-weight: bold;
+    font-style: italic;
+    text-decoration: underline;
+    background-color: yellow;
+    font-size: 12px;
+    margin-bottom: 5px;
+    width:max-content;
+
+}
