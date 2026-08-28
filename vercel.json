@@ -1,0 +1,39 @@
+{
+    "cleanUrls": true,
+    "rewrites": [
+        {
+            "comment": "================ Pertemuan 3 (HTML) ================",
+            "source": "/aktivitas/tugas_html_25071103537.html",
+            "destination": "/aktivitas/Pertemuan3/Aldiraj_Damar/tugas_html_25071103537.html"
+        },
+        {
+            "source": "/aktivitas/tugas_html_25071305932.html",
+            "destination": "/aktivitas/Pertemuan3/Christian_Carlos/tugas_html_25071305932 .html"
+        },
+        {
+            "source": "/aktivitas/tugas_html_25071104277.html",
+            "destination": "/aktivitas/Pertemuan3/Izzatur_Rifah/tugas_html_25071104277.html"
+        },
+        {
+            "source": "/aktivitas/tugas_html_25071206575.html",
+            "destination": "/aktivitas/Pertemuan3/Shabrina_Hilwa/tugas_html_25071206575.html"
+        },
+        {
+            "comment": "================ Pertemuan 4 (CSS) ================",
+            "source": "/aktivitas/tugas_css_25071103537.html",
+            "destination": "/aktivitas/Pertemuan4/Aldiraj_Damar/tugas_css_25071103537.html"
+        },
+        {
+            "source": "/aktivitas/tugas_css_25071305932.html",
+            "destination": "/aktivitas/Pertemuan4/Christian_Carlos/tugas_css_25071305932.html"
+        },
+        {
+            "source": "/aktivitas/tugas_css_25071104277.html",
+            "destination": "/aktivitas/Pertemuan4/Izzatur_Rifah/tugas_css_25071104277.html"
+        },
+        {
+            "source": "/aktivitas/tugas_css_25071206575.html",
+            "destination": "/aktivitas/Pertemuan4/Shabrina_Hilwa/tugas_css_25071206575.html"
+        }
+    ]
+}

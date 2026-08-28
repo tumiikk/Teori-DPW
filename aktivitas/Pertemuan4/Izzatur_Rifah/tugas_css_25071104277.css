@@ -1,0 +1,133 @@
+/* Pengaturan Umum Halaman */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+    margin: 20px;
+    line-height: 1.5;
+}
+
+.kontainer-utama {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Judul Utama & Sub Judul */
+.judul-utama {
+    text-align: center;
+    background-color: #00ffff;
+    /* Warna cyan / biru muda */
+    display: table;
+    margin: 0 auto 10px auto;
+    padding: 2px 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.sub-judul {
+    text-align: center;
+    background-color: #0000ff;
+    /* Warna biru */
+    color: #ffffff;
+    /* Teks putih */
+    display: table;
+    margin: 0 auto 20px auto;
+    padding: 2px 15px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Kotak Berbingkai Merah */
+.kotak-merah {
+    border: 1px solid #ff0000;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.kotak-merah p {
+    margin: 0;
+}
+
+/* Paragraf dan Teks */
+.paragraf {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.sorot-hijau {
+    background-color: #00ff00;
+    /* Warna hijau terang */
+}
+
+.sorot-kuning {
+    background-color: #ffff00;
+    /* Warna kuning terang */
+}
+
+.teks-miring {
+    font-style: italic;
+}
+
+.teks-biru {
+    color: #0000ff;
+    font-weight: bold;
+}
+
+.tautan {
+    color: #0000ff;
+    text-decoration: underline;
+}
+
+/* Tabel */
+.tabel-nomor {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+}
+
+.tabel-nomor td {
+    border: 1px solid #000000;
+    padding: 8px 12px;
+    color: #ff0000;
+    /* Angka berwarna merah */
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.kolom-1 {
+    width: 33%;
+}
+
+.kolom-2 {
+    width: 33%;
+}
+
+.kolom-3 {
+    width: 34%;
+}
+
+/* Judul dan Daftar Pancasila */
+.judul-pancasila {
+    text-align: center;
+    background-color: #00ffff;
+    /* Warna cyan / biru muda */
+    display: table;
+    margin: 25px auto 20px auto;
+    padding: 2px 15px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.daftar-pancasila {
+    padding-left: 20px;
+}
+
+.daftar-pancasila li {
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.cetak-tebal-miring {
+    font-weight: bold;
+    font-style: italic;
+}
