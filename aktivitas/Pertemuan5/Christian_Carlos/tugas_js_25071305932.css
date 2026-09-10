@@ -1,0 +1,80 @@
+* {
+    box-sizing: border-box;
+}
+
+#hasilNama {
+    display: none;
+    font-weight: bold;
+}
+body {
+    margin: 0;
+    padding: 30px 8px;
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #111;
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.hasil-nama {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 22px;
+}
+h1 {
+    margin: 0;
+    text-align: center;
+    color: black;
+    font-size: 18px;
+    font-weight: normal;
+}
+h2 {
+    margin: 0;
+    text-align: center;
+    color: #b000ff;
+    font-size: 18px;
+    font-weight: normal;
+}
+
+h3 {
+    margin: 6px 0 22px;
+    text-align: center;
+    color: #b000ff;
+    font-size: 18px;
+    font-weight: normal;
+}
+
+p {
+    font-size: 15px;
+    line-height: 1.35;
+    margin: 0 0 20px;
+    text-align: justify;
+}
+
+mark {
+    font-weight: bold;
+    padding: 0;
+}
+
+.ungu {
+    background-color: #b000ff;
+    color: black;
+}
+.merah {
+    background-color: red;
+    color: black;
+}
+
+.hijau {
+    background-color: lime;
+    color: black;
+}
+
+.biru {
+    background-color: blue;
+    color: white;
+}
