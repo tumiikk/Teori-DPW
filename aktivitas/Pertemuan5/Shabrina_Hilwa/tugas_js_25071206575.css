@@ -1,0 +1,129 @@
+body {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    width: 600px;
+    margin: 20px auto;
+    line-height: 1.4;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 50px;
+    z-index: 1000;
+}
+
+.modal-box {
+    background-color: #ffffff; /* Ubah warna background kotak pop-up */
+    width: 380px;
+    padding: 20px 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.modal-title {
+    margin: 0 0 12px 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: #1f1f1f; 
+}
+
+.modal-label {
+    display: block;
+    font-size: 13px;
+    color: #333333; 
+    margin-bottom: 8px;
+}
+
+.modal-input {
+    width: 100%;
+    padding: 8px 12px;
+    font-size: 14px;
+    border: 2px solid #0b57d0; /* Ubah warna border garis input */
+    border-radius: 8px;
+    outline: none;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+.btn-oke {
+    background-color: #0b57d0;
+    color: #ffffff;        
+    border: none;
+    padding: 8px 22px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-batal {
+    background-color: #ffffff; 
+    color: #0b57d0;            
+    border: 1px solid #74a0e8; 
+    padding: 8px 22px;
+    border-radius: 20px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+center {
+    color: #9900ff;
+    font-size: 14px;
+}
+
+p {
+    text-align: justify;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.pink {
+    background-color: magenta;
+    font-weight: bold;
+    color: black;
+}
+
+.red {
+    background-color: red;
+    font-weight: bold;
+    color: black;
+}
+
+.green {
+    background-color: lime;
+    color: black;
+}
+
+.blue {
+    background-color: blue;
+    color: white;
+    font-weight: bold;
+}
+
+.pancasila {
+    color: black;
+    margin-top: 25px;
+    font-size: 14px;
+}
+
+ol {
+    text-align: justify;
+    line-height: 1.4;
+    padding-left: 20px;
+}
+
+ol li {
+    margin-bottom: 5px;
+}
