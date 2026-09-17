@@ -101,6 +101,14 @@
             "destination": "/aktivitas/Pertemuan6/:path*"
         },
         {
+            "source": "/aktivitas/logo.png",
+            "destination": "/aktivitas/Pertemuan6/logo.png"
+        },
+        {
+            "source": "/aktivitas/gambar.png",
+            "destination": "/aktivitas/Pertemuan6/gambar.png"
+        },
+        {
             "source": "/aktivitas/tugas_framework_css_25071103537.html",
             "destination": "/aktivitas/Pertemuan6/tugas_framework_kelompok.html"
         },
