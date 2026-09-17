@@ -95,6 +95,22 @@
         {
             "source": "/aktivitas/tugas_js_25071206575.js",
             "destination": "/aktivitas/Pertemuan5/Shabrina_Hilwa/tugas_js_25071206575.js"
+        },
+        {
+            "source": "/aktivitas/tugas_framework_css_25071103537.html",
+            "destination": "/aktivitas/Pertemuan6/tugas_framework_kelompok.html"
+        },
+        {
+            "source": "/aktivitas/tugas_framework_css_25071305932.html",
+            "destination": "/aktivitas/Pertemuan6/tugas_framework_kelompok.html"
+        },
+        {
+            "source": "/aktivitas/tugas_framework_css_25071104277.html",
+            "destination": "/aktivitas/Pertemuan6/tugas_framework_kelompok.html"
+        },
+        {
+            "source": "/aktivitas/tugas_framework_css_25071206575.html",
+            "destination": "/aktivitas/Pertemuan6/tugas_framework_kelompok.html"
         }
     ]
 }
