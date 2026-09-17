@@ -97,6 +97,10 @@
             "destination": "/aktivitas/Pertemuan5/Shabrina_Hilwa/tugas_js_25071206575.js"
         },
         {
+            "source": "/aktivitas/Pertemuan6/:path*",
+            "destination": "/aktivitas/Pertemuan6/:path*"
+        },
+        {
             "source": "/aktivitas/tugas_framework_css_25071103537.html",
             "destination": "/aktivitas/Pertemuan6/tugas_framework_kelompok.html"
         },
