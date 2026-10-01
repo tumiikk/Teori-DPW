@@ -1,0 +1,1514 @@
+/* =========================================================
+   FONT
+========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&display=swap');
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+
+    color: #27466d;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    background: #dfe7e9;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+
+/* =========================================================
+   GLOBAL PAGE
+========================================================= */
+
+.page {
+    position: relative;
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    padding: 70px;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        url("images/bg.jpg") center center / cover no-repeat;
+}
+
+
+/* Bingkai luar */
+
+.page::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 18px;
+
+    border: 1px solid rgba(201, 178, 124, 0.65);
+
+    pointer-events: none;
+}
+
+
+/* Bingkai kedua */
+
+.page::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 24px;
+
+    border: 1px solid rgba(255, 255, 255, 0.55);
+
+    pointer-events: none;
+}
+
+
+/* Semua isi berada di atas bingkai */
+
+.page>* {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   TYPOGRAPHY
+========================================================= */
+
+.script {
+    font-family:
+        "Great Vibes",
+        "Brush Script MT",
+        cursive;
+
+    font-weight: 400;
+
+    color: #244676;
+}
+
+.normal-title {
+    margin: 0;
+
+    font-size: clamp(44px, 5vw, 68px);
+
+    line-height: 1;
+
+    font-weight: 500;
+
+    color: #294b73;
+}
+
+.small-caps {
+    font-size: 13px;
+
+    letter-spacing: 4px;
+
+    color: #405c7c;
+}
+
+.date-caps {
+    font-size: 13px;
+
+    letter-spacing: 2.5px;
+
+    color: #405c7c;
+}
+
+
+/* =========================================================
+   GOLD DECORATION
+========================================================= */
+
+.gold-rule {
+    position: relative;
+
+    width: 260px;
+
+    height: 1px;
+
+    margin: 18px auto;
+
+    background: #cdb77d;
+}
+
+.gold-rule::after {
+    content: "◇";
+
+    position: absolute;
+
+    top: -11px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    padding: 0 7px;
+
+    background: rgba(246, 247, 243, 0.95);
+
+    color: #c7aa68;
+
+    font-size: 13px;
+}
+
+.doa-decoration,
+.mini-decoration {
+    color: #c6aa69;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.button {
+    border: 1px solid #d0b97d;
+
+    padding: 12px 35px;
+
+    color: #2c4d72;
+
+    background: rgba(255, 255, 255, 0.62);
+
+    cursor: pointer;
+
+    letter-spacing: 1px;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.button:hover {
+    background: rgba(255, 255, 255, 0.9);
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   01. COVER
+========================================================= */
+
+.cover {
+    min-height: 100vh;
+}
+
+.cover-card {
+    position: relative;
+
+    width: min(620px, 90%);
+
+    min-height: 580px;
+
+    padding: 80px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    background: rgba(250, 250, 246, 0.77);
+
+    border: 1px solid #d3be88;
+}
+
+
+/* Bingkai dalam */
+
+.cover-card::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 15px;
+
+    border: 1px solid #e0d2ac;
+
+    pointer-events: none;
+}
+
+.cover-name {
+    margin: 20px 0;
+
+    font-size: clamp(72px, 8vw, 108px);
+
+    line-height: 0.9;
+}
+
+.guest-text {
+    margin: 28px 0;
+
+    font-size: 17px;
+
+    font-style: italic;
+}
+
+.light-button {
+    min-width: 230px;
+}
+
+
+/* =========================================================
+   02. DOA
+========================================================= */
+
+.doa {
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+.quote-card {
+    position: relative;
+
+    width: min(650px, 90%);
+
+    padding: 65px 80px;
+
+    text-align: center;
+
+    background: rgba(249, 249, 244, 0.76);
+
+    border: 1px solid #d2bd87;
+}
+
+.quote-card::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 14px;
+
+    border: 1px solid #e1d5b7;
+
+    pointer-events: none;
+}
+
+.quote-card p {
+    position: relative;
+
+    margin: 0 0 25px;
+
+    font-size: 23px;
+
+    line-height: 1.55;
+}
+
+.quote-card span {
+    position: relative;
+
+    font-size: 16px;
+
+    font-style: italic;
+}
+
+
+/* =========================================================
+   03. COUPLE
+========================================================= */
+
+.couple {
+    flex-direction: column;
+
+    text-align: center;
+}
+
+.section-heading {
+    width: min(850px, 100%);
+}
+
+.section-heading .script {
+    margin: 0;
+
+    font-size: 78px;
+}
+
+.section-heading p {
+    margin: 10px auto 20px;
+
+    font-size: 18px;
+}
+
+.couple-grid {
+    width: min(850px, 100%);
+
+    margin-top: 30px;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 80px 1fr;
+
+    align-items: center;
+
+    gap: 25px;
+}
+
+.person-card {
+    display: flex;
+
+    align-items: center;
+
+    gap: 22px;
+}
+
+.person-card:last-child {
+    flex-direction: row-reverse;
+}
+
+.person-photo {
+    width: 155px;
+
+    height: 225px;
+
+    padding: 5px;
+
+    object-fit: cover;
+
+    background: rgba(255, 255, 255, 0.7);
+
+    border: 1px solid #cdb77d;
+
+    border-radius: 15px;
+}
+
+.person-info {
+    flex: 1;
+}
+
+.person-info h3 {
+    margin: 0;
+
+    font-size: 48px;
+}
+
+.person-info p {
+    margin: 8px 0;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+
+    letter-spacing: 1px;
+}
+
+.tiny-rule {
+    color: #c5a76a;
+
+    font-size: 12px;
+}
+
+.ampersand {
+    font-family:
+        "Great Vibes",
+        cursive;
+
+    font-size: 65px;
+
+    color: #c3a665;
+}
+
+
+/* =========================================================
+   04 & 05. EVENT
+========================================================= */
+
+.event-grid {
+    width: min(1100px, 100%);
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr) 410px;
+
+    align-items: center;
+
+    gap: 70px;
+}
+
+.event-info {
+    text-align: center;
+}
+
+.event-title {
+    margin: 0;
+
+    font-size: 72px;
+
+    line-height: 1;
+}
+
+.event-intro {
+    max-width: 520px;
+
+    margin: 25px auto;
+
+    font-size: 18px;
+
+    line-height: 1.55;
+
+    font-style: italic;
+}
+
+.event-box {
+    width: 300px;
+
+    margin: 25px auto;
+
+    padding: 20px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.67);
+
+    border: 1px solid #d2bd87;
+
+    border-radius: 9px;
+}
+
+.event-box h3 {
+    margin: 0 0 12px;
+
+    font-size: 40px;
+}
+
+.event-box p {
+    margin: 6px 0;
+
+    font-size: 16px;
+}
+
+.event-info h4 {
+    margin: 12px 0;
+
+    font-size: 18px;
+
+    letter-spacing: 1px;
+}
+
+.address {
+    font-size: 16px;
+
+    line-height: 1.45;
+}
+
+
+/* Photo */
+
+.photo-frame {
+    position: relative;
+
+    width: 100%;
+
+    height: 550px;
+
+    padding: 10px;
+
+    background: rgba(255, 255, 255, 0.66);
+
+    border: 1px solid #cdb77d;
+
+    border-radius:
+        200px 200px 15px 15px;
+}
+
+.photo-frame::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 5px;
+
+    border: 1px solid #dfd0aa;
+
+    border-radius:
+        194px 194px 10px 10px;
+
+    pointer-events: none;
+
+    z-index: 2;
+}
+
+.photo-frame img {
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius:
+        190px 190px 8px 8px;
+}
+
+.photo-seal {
+    position: absolute;
+
+    left: 50%;
+
+    bottom: -28px;
+
+    transform: translateX(-50%);
+
+    width: 70px;
+
+    height: 70px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 50%;
+
+    border: 1px solid #cdb77d;
+
+    background: #f3f0e5;
+
+    color: #b59b5f;
+
+    z-index: 4;
+}
+
+
+/* =========================================================
+   06. GALLERY
+========================================================= */
+
+.gallery-page {
+    align-items: flex-start;
+}
+
+.gallery-content {
+    width: min(1050px, 100%);
+}
+
+.gallery-subtitle {
+    margin: 8px 0;
+
+    font-size: 18px;
+}
+
+.gallery-rule {
+    margin-left: 0;
+}
+
+.gallery-grid {
+    margin-top: 25px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+}
+
+.gallery-photo {
+    padding: 6px;
+
+    background: rgba(255, 255, 255, 0.75);
+
+    border: 1px solid #d0ba82;
+}
+
+.gallery-photo img {
+    display: block;
+
+    width: 100%;
+
+    height: 185px;
+
+    object-fit: cover;
+}
+
+
+/* =========================================================
+   07 & 11. LOVE STORY
+========================================================= */
+
+.story-page {
+    align-items: flex-start;
+}
+
+.story-content {
+    width: min(900px, 100%);
+}
+
+.story-intro {
+    width: 470px;
+
+    max-width: 100%;
+
+    margin: 20px 0;
+
+    font-size: 18px;
+
+    line-height: 1.5;
+}
+
+.timeline {
+    width: 650px;
+
+    max-width: 100%;
+
+    margin-top: 35px;
+}
+
+.timeline-item {
+    display: grid;
+
+    grid-template-columns:
+        90px 30px 1fr;
+
+    min-height: 125px;
+
+    align-items: start;
+}
+
+.timeline-year {
+    padding-right: 15px;
+
+    text-align: right;
+
+    font-size: 21px;
+}
+
+.timeline-middle {
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+}
+
+.timeline-dot {
+    position: relative;
+
+    width: 15px;
+
+    height: 15px;
+
+    margin-top: 5px;
+
+    border: 1px solid #c9b171;
+
+    border-radius: 50%;
+
+    background: #f7f0dc;
+
+    z-index: 2;
+}
+
+.timeline-middle::after {
+    content: "";
+
+    position: absolute;
+
+    top: 20px;
+
+    width: 1px;
+
+    height: 105px;
+
+    background: #d5c596;
+}
+
+.timeline-item:last-child .timeline-middle::after {
+    display: none;
+}
+
+.timeline-text {
+    padding-left: 18px;
+}
+
+.timeline-text h3 {
+    margin: 0 0 5px;
+
+    font-size: 16px;
+
+    letter-spacing: 1px;
+}
+
+.timeline-text p {
+    margin: 0;
+
+    font-size: 15px;
+
+    line-height: 1.45;
+}
+
+
+/* =========================================================
+   08. WISH
+========================================================= */
+
+.wish-page {
+    text-align: center;
+}
+
+.wish-card {
+    width: min(500px, 90%);
+
+    padding: 45px 55px;
+
+    background: rgba(249, 249, 244, 0.77);
+
+    border: 1px solid #cbb57a;
+}
+
+.wish-symbol {
+    margin-bottom: 5px;
+
+    color: #aebdcc;
+
+    font-size: 32px;
+}
+
+.wish-card .normal-title {
+    font-size: 58px;
+}
+
+.wish-form {
+    margin-top: 25px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    text-align: left;
+}
+
+.wish-form label {
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+    color: #466181;
+}
+
+.wish-form input,
+.wish-form select,
+.wish-form textarea,
+.login-form input,
+.edit-card input,
+.edit-card textarea {
+    width: 100%;
+
+    padding: 11px 12px;
+
+    border: 1px solid #9db1c3;
+
+    outline: none;
+
+    color: #385471;
+
+    background: rgba(255, 255, 255, 0.68);
+}
+
+.wish-form textarea {
+    height: 110px;
+
+    resize: none;
+}
+
+.confirm-button {
+    align-self: center;
+
+    min-width: 210px;
+
+    margin-top: 8px;
+
+    background: #cbdceb;
+}
+
+
+/* =========================================================
+   09. ADMIN LOGIN
+========================================================= */
+
+.admin-login-card {
+    width: min(380px, 90%);
+
+    min-height: 570px;
+
+    padding: 65px 45px;
+
+    text-align: center;
+
+    background: rgba(249, 249, 244, 0.78);
+
+    border: 1px solid #d2bd87;
+}
+
+.admin-login-card .script {
+    margin: 10px 0 25px;
+
+    font-size: 62px;
+}
+
+.admin-symbol {
+    margin: 10px;
+
+    color: #c4a76a;
+
+    font-size: 23px;
+}
+
+.admin-login-card h1 {
+    margin: 10px 0;
+
+    font-size: 34px;
+
+    font-weight: 500;
+}
+
+.login-form {
+    margin-top: 25px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+.login-button {
+    padding: 14px;
+
+    border: none;
+
+    background: #294b73;
+
+    color: #f4ead0;
+
+    cursor: pointer;
+
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   10. ADMIN EDIT
+========================================================= */
+
+.admin-edit {
+    align-items: flex-start;
+}
+
+.edit-card {
+    width: min(650px, 90%);
+
+    max-height: calc(100vh - 100px);
+
+    overflow-y: auto;
+
+    padding: 45px 55px;
+
+    background: rgba(249, 249, 244, 0.82);
+
+    border: 1px solid #d0ba82;
+}
+
+.edit-card h1 {
+    margin: 0 0 25px;
+
+    text-align: center;
+
+    font-size: 31px;
+
+    font-weight: 500;
+}
+
+.form-section {
+    padding: 15px 0 20px;
+
+    border-bottom: 1px solid #dfd0a9;
+}
+
+.form-section h2 {
+    margin: 0 0 12px;
+
+    text-align: center;
+
+    font-size: 19px;
+
+    font-weight: 500;
+
+    color: #47617e;
+}
+
+.form-section input {
+    margin-bottom: 8px;
+}
+
+.form-section textarea {
+    min-height: 100px;
+
+    resize: vertical;
+}
+
+.save-button {
+    display: block;
+
+    margin: 25px auto 0;
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .page {
+        padding: 50px 35px;
+    }
+
+    .event-grid {
+        grid-template-columns: 1fr 330px;
+
+        gap: 40px;
+    }
+
+    .photo-frame {
+        height: 460px;
+    }
+
+    .couple-grid {
+        grid-template-columns:
+            1fr 60px 1fr;
+
+        gap: 12px;
+    }
+
+    .person-card {
+        gap: 12px;
+    }
+
+    .person-photo {
+        width: 120px;
+
+        height: 180px;
+    }
+
+    .gallery-grid {
+        gap: 12px;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    /* ---------- GLOBAL ---------- */
+
+    .page {
+        min-height: 667px;
+
+        height: auto;
+
+        padding:
+            35px 18px;
+
+        overflow: hidden;
+    }
+
+    .page::before {
+        inset: 9px;
+    }
+
+    .page::after {
+        inset: 13px;
+    }
+
+
+    /* ---------- TYPOGRAPHY ---------- */
+
+    .normal-title {
+        font-size: 42px;
+    }
+
+    .small-caps {
+        font-size: 9px;
+
+        letter-spacing: 2.5px;
+    }
+
+
+    /* ---------- COVER ---------- */
+
+    .cover {
+        min-height: 667px;
+    }
+
+    .cover-card {
+        width: 100%;
+
+        min-height: 590px;
+
+        padding:
+            55px 20px;
+    }
+
+    .cover-card::before {
+        inset: 10px;
+    }
+
+    .cover-name {
+        font-size: 57px;
+
+        margin: 17px 0;
+    }
+
+    .date-caps {
+        font-size: 9px;
+
+        letter-spacing: 1.5px;
+    }
+
+    .guest-text {
+        margin: 22px 0;
+
+        font-size: 14px;
+    }
+
+    .light-button {
+        min-width: 190px;
+
+        padding: 10px 20px;
+
+        font-size: 11px;
+    }
+
+
+    /* ---------- DOA ---------- */
+
+    .doa {
+        min-height: 667px;
+
+        padding:
+            35px 20px;
+    }
+
+    .quote-card {
+        width: 100%;
+
+        padding:
+            45px 25px;
+    }
+
+    .quote-card::before {
+        inset: 10px;
+    }
+
+    .quote-card p {
+        font-size: 17px;
+
+        line-height: 1.55;
+    }
+
+    .quote-card span {
+        font-size: 13px;
+    }
+
+
+    /* ---------- COUPLE ---------- */
+
+    .couple {
+        min-height: 667px;
+
+        padding-top: 45px;
+
+        justify-content: flex-start;
+    }
+
+    .section-heading .script {
+        font-size: 54px;
+    }
+
+    .section-heading p {
+        max-width: 290px;
+
+        font-size: 14px;
+
+        line-height: 1.4;
+    }
+
+    .couple-grid {
+        width: 100%;
+
+        margin-top: 30px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+    .person-card,
+    .person-card:last-child {
+        width: 100%;
+
+        flex-direction: row;
+
+        justify-content: center;
+
+        gap: 15px;
+    }
+
+    .person-photo {
+        width: 95px;
+
+        height: 135px;
+    }
+
+    .person-info {
+        flex: 0 1 150px;
+    }
+
+    .person-info h3 {
+        font-size: 38px;
+    }
+
+    .person-info p {
+        font-size: 9px;
+    }
+
+    .ampersand {
+        font-size: 38px;
+    }
+
+
+    /* ---------- EVENT ---------- */
+
+    .event-page {
+        min-height: 900px;
+
+        padding-top: 50px;
+
+        padding-bottom: 60px;
+    }
+
+    .event-grid {
+        width: 100%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 35px;
+    }
+
+    .event-info {
+        width: 100%;
+    }
+
+    .event-title {
+        font-size: 55px;
+    }
+
+    .event-intro {
+        max-width: 310px;
+
+        font-size: 15px;
+
+        line-height: 1.5;
+    }
+
+    .event-box {
+        width: 260px;
+
+        padding: 17px;
+    }
+
+    .event-box h3 {
+        font-size: 35px;
+    }
+
+    .event-box p {
+        font-size: 14px;
+    }
+
+    .event-info h4 {
+        font-size: 15px;
+    }
+
+    .address {
+        font-size: 13px;
+
+        line-height: 1.45;
+    }
+
+    .outline-button {
+        padding: 10px 35px;
+
+        font-size: 10px;
+    }
+
+    .photo-frame {
+        width: 260px;
+
+        height: 350px;
+
+        margin-bottom: 25px;
+
+        border-radius:
+            140px 140px 12px 12px;
+    }
+
+    .photo-frame::before {
+        border-radius:
+            134px 134px 8px 8px;
+    }
+
+    .photo-frame img {
+        border-radius:
+            130px 130px 6px 6px;
+    }
+
+    .photo-seal {
+        width: 58px;
+
+        height: 58px;
+
+        bottom: -22px;
+    }
+
+
+    /* ---------- GALLERY ---------- */
+
+    .gallery-page {
+        min-height: 667px;
+
+        align-items: flex-start;
+
+        padding-top: 50px;
+    }
+
+    .gallery-subtitle {
+        font-size: 14px;
+
+        line-height: 1.4;
+    }
+
+    .gallery-rule {
+        width: 180px;
+
+        margin-left: 0;
+    }
+
+    .gallery-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 9px;
+
+        margin-top: 20px;
+    }
+
+    .gallery-photo {
+        padding: 4px;
+    }
+
+    .gallery-photo img {
+        height: 105px;
+    }
+
+
+    /* ---------- LOVE STORY ---------- */
+
+    .story-page {
+        min-height: 667px;
+
+        align-items: flex-start;
+
+        padding-top: 50px;
+    }
+
+    .story-intro {
+        width: 100%;
+
+        font-size: 15px;
+
+        line-height: 1.5;
+    }
+
+    .timeline {
+        width: 100%;
+
+        margin-top: 30px;
+    }
+
+    .timeline-item {
+        grid-template-columns:
+            52px 22px 1fr;
+
+        min-height: 105px;
+    }
+
+    .timeline-year {
+        padding-right: 8px;
+
+        font-size: 15px;
+    }
+
+    .timeline-text {
+        padding-left: 10px;
+    }
+
+    .timeline-text h3 {
+        font-size: 12px;
+    }
+
+    .timeline-text p {
+        font-size: 12px;
+
+        line-height: 1.4;
+    }
+
+    .timeline-middle::after {
+        height: 90px;
+    }
+
+
+    /* ---------- WISH ---------- */
+
+    .wish-page {
+        min-height: 667px;
+    }
+
+    .wish-card {
+        width: 100%;
+
+        padding:
+            35px 22px;
+    }
+
+    .wish-card .normal-title {
+        font-size: 43px;
+    }
+
+    .wish-form input,
+    .wish-form select,
+    .wish-form textarea {
+        font-size: 12px;
+    }
+
+    .wish-form textarea {
+        height: 90px;
+    }
+
+
+    /* ---------- ADMIN LOGIN ---------- */
+
+    .admin-login {
+        min-height: 667px;
+    }
+
+    .admin-login-card {
+        width: 100%;
+
+        min-height: 590px;
+
+        padding:
+            55px 25px;
+    }
+
+    .admin-login-card .script {
+        font-size: 50px;
+    }
+
+    .admin-login-card h1 {
+        font-size: 29px;
+    }
+
+    .login-form input {
+        padding: 10px;
+    }
+
+
+    /* ---------- ADMIN EDIT ---------- */
+
+    .admin-edit {
+        min-height: 800px;
+
+        align-items: flex-start;
+    }
+
+    .edit-card {
+        width: 100%;
+
+        max-height: none;
+
+        padding:
+            30px 20px;
+    }
+
+    .edit-card h1 {
+        font-size: 25px;
+
+        line-height: 1.2;
+    }
+
+    .form-section h2 {
+        font-size: 17px;
+    }
+
+    .edit-card input,
+    .edit-card textarea {
+        font-size: 12px;
+    }
+
+    .save-button {
+        width: 100%;
+    }
+
+}
