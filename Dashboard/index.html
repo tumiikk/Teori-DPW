@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard Undangan Digital</title>
+    <!-- Font Google: Great Vibes, Playfair Display, Plus Jakarta Sans -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --navy-bg: #264268;
+            --navy-sidebar: #2b456b;
+            --navy-active: #3e5982;
+            --cream-bg: #fdfbf7;
+            --cream-input: #ffffff;
+            --gold-btn: #9c7a33;
+            --gold-btn-hover: #856729;
+            --gold-border: #e8ded0;
+            --text-navy: #1f3452;
+            --text-muted: #667085;
+            --white: #ffffff;
+            --error-red: #d93838;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background-color: var(--cream-bg);
+            color: var(--text-navy);
+            min-height: 100vh;
+        }
+
+        .font-cursive {
+            font-family: 'Great Vibes', cursive;
+        }
+
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* --- 1. HALAMAN LOGIN --- */
+        #login-view {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: var(--navy-bg);
+            padding: 20px;
+        }
+
+        .login-wrapper {
+            background-color: var(--cream-bg);
+            width: 100%;
+            max-width: 780px;
+            min-height: 480px;
+            border-radius: 6px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .flower-top-right {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            width: 160px;
+            pointer-events: none;
+        }
+
+        .flower-bottom-left {
+            position: absolute;
+            bottom: -10px;
+            left: -10px;
+            width: 150px;
+            pointer-events: none;
+        }
+
+        .login-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .login-title {
+            font-size: 56px;
+            color: var(--text-navy);
+            line-height: 1.1;
+            margin-bottom: 5px;
+            font-weight: normal;
+        }
+
+        .divider-line {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin: 12px 0;
+        }
+
+        .divider-line::before,
+        .divider-line::after {
+            content: '';
+            width: 90px;
+            height: 1px;
+            background-color: var(--gold-border);
+        }
+
+        .divider-diamond {
+            width: 6px;
+            height: 6px;
+            background-color: var(--gold-btn);
+            transform: rotate(45deg);
+        }
+
+        .login-form-container {
+            width: 100%;
+            max-width: 330px;
+        }
+
+        .input-box {
+            position: relative;
+            margin-bottom: 14px;
+        }
+
+        .input-box input {
+            width: 100%;
+            padding: 12px 16px 12px 42px;
+            border: 1px solid var(--gold-border);
+            border-radius: 8px;
+            background-color: #f7f4ed;
+            font-size: 13px;
+            color: var(--text-navy);
+            outline: none;
+            transition: all 0.3s;
+        }
+
+        .input-box input:focus {
+            border-color: var(--navy-bg);
+            background-color: #ffffff;
+        }
+
+        .input-icon-left {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #4b6282;
+            font-size: 15px;
+        }
+
+        .toggle-password {
+            position: absolute;
+            right: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #4b6282;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .btn-login-custom {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--navy-bg);
+            color: #ffffff;
+            border: 1px solid var(--gold-btn);
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 4px;
+        }
+
+        .btn-login-custom:hover {
+            background-color: #1a304d;
+        }
+
+        .error-message {
+            color: var(--error-red);
+            font-size: 12px;
+            text-align: center;
+            margin-bottom: 10px;
+            display: none;
+        }
+
+        /* --- 2. LAYOUT DASHBOARD --- */
+        #dashboard-view {
+            display: none;
+            flex-direction: row;
+            min-height: 100vh;
+            background-color: var(--cream-bg);
+        }
+
+        /* SIDEBAR (SESUAI GAMBAR REFERENSI SIDEBAR) */
+        .sidebar {
+            width: 280px;
+            background-color: var(--navy-sidebar);
+            color: var(--white);
+            display: flex;
+            flex-direction: column;
+            padding: 40px 20px 24px 20px;
+        }
+
+        .sidebar-brand {
+            font-size: 42px;
+            color: #d9b868;
+            text-align: center;
+            margin-bottom: 40px;
+            font-weight: normal;
+        }
+
+        .sidebar-menu {
+            list-style: none;
+            flex: 1;
+        }
+
+        .sidebar-menu li {
+            margin-bottom: 12px;
+        }
+
+        .sidebar-menu a {
+            display: block;
+            padding: 14px 20px;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .sidebar-menu a:hover,
+        .sidebar-menu a.active {
+            background-color: var(--navy-active);
+        }
+
+        .btn-logout {
+            background: transparent;
+            border: 1px solid #ff6b6b;
+            color: #ff6b6b;
+            padding: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            width: 100%;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 40px;
+            overflow-y: auto;
+        }
+
+        .header-title {
+            margin-bottom: 30px;
+        }
+
+        .header-title h1 {
+            color: var(--text-navy);
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .header-title p {
+            color: #555;
+            font-size: 15px;
+        }
+
+        .content-section {
+            display: none;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        .card-box {
+            background-color: #ffffff;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            border: 1px solid #f0eadf;
+            margin-bottom: 25px;
+        }
+
+        /* --- PENGATURAN LANDING PAGE (TAB LAYOUT PERFEKTIF) --- */
+        .tab-navigation {
+            display: flex;
+            gap: 15px;
+            border-bottom: 1px solid #eae2d5;
+            padding-bottom: 16px;
+            margin-bottom: 28px;
+        }
+
+        .tab-btn {
+            background: transparent;
+            border: none;
+            padding: 10px 22px;
+            font-size: 15px;
+            font-weight: 600;
+            color: #444;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: all 0.2s;
+        }
+
+        .tab-btn.active {
+            background-color: #eae3d5;
+            color: #1f3452;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .form-group {
+            margin-bottom: 22px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text-navy);
+            margin-bottom: 10px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #dcd3c5;
+            border-radius: 8px;
+            font-size: 15px;
+            outline: none;
+            background-color: var(--cream-input);
+        }
+
+        .form-control:focus {
+            border-color: var(--gold-btn);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        /* Tombol Simpan Perubahan (Olive Gold) */
+        .btn-simpan {
+            background-color: var(--gold-btn);
+            color: #ffffff;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin-top: 10px;
+        }
+
+        .btn-simpan:hover {
+            background-color: var(--gold-btn-hover);
+        }
+
+        /* Stat Cards */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-bottom: 25px;
+        }
+
+        .stat-card {
+            background-color: #f7f3eb;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 5px solid var(--navy-sidebar);
+        }
+
+        .stat-card h3 {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .stat-card p {
+            font-size: 30px;
+            font-weight: 700;
+            color: var(--text-navy);
+            margin-top: 5px;
+        }
+
+        .card-header-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #f0eadf;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        th {
+            background-color: var(--navy-sidebar);
+            color: var(--white);
+            padding: 14px 16px;
+            text-align: left;
+        }
+
+        td {
+            padding: 14px 16px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .badge {
+            padding: 5px 10px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .badge-success {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .badge-danger {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .badge-warning {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .btn-danger-sm {
+            background-color: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-box {
+            background: white;
+            padding: 28px;
+            border-radius: 14px;
+            width: 100%;
+            max-width: 420px;
+            position: relative;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 18px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 20px;
+            color: #888;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= 1. LOGIN ADMIN ================= -->
+    <div id="login-view">
+        <div class="login-wrapper">
+            <svg class="flower-top-right" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="90" cy="30" r="25" fill="#a8c0d6" opacity="0.65" />
+                <circle cx="70" cy="50" r="18" fill="#cbe0f0" opacity="0.7" />
+                <circle cx="105" cy="60" r="12" fill="#7a97b8" opacity="0.6" />
+                <path d="M50 20 Q70 10 90 20 T100 40" stroke="#779169" stroke-width="2" fill="none" />
+            </svg>
+
+            <svg class="flower-bottom-left" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="30" cy="90" r="25" fill="#a8c0d6" opacity="0.65" />
+                <circle cx="50" cy="70" r="18" fill="#cbe0f0" opacity="0.7" />
+                <circle cx="20" cy="60" r="12" fill="#7a97b8" opacity="0.6" />
+                <path d="M70 100 Q50 110 30 100 T20 80" stroke="#779169" stroke-width="2" fill="none" />
+            </svg>
+
+            <div class="login-header">
+                <h1 class="login-title font-cursive">Admin<br>Login</h1>
+                <div class="divider-line">
+                    <div class="divider-diamond"></div>
+                </div>
+            </div>
+
+            <div class="login-form-container">
+                <div id="login-error" class="error-message">Username atau Password salah!</div>
+                <form onsubmit="handleLogin(event)">
+                    <div class="input-box">
+                        <span class="input-icon-left">✉</span>
+                        <input type="text" id="login-user" placeholder="Email/Username" required>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="input-icon-left">🔒</span>
+                        <input type="password" id="login-pass" placeholder="Password" required>
+                        <span class="toggle-password" onclick="togglePass()">👁</span>
+                    </div>
+
+                    <button type="submit" class="btn-login-custom">◆ Login ◆</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= 2. DASHBOARD VIEW ================= -->
+    <div id="dashboard-view">
+        <!-- SIDEBAR SESUAI REFERENSI GAMBAR -->
+        <div class="sidebar">
+            <div class="sidebar-brand font-cursive">Ayu & Kevin</div>
+            <ul class="sidebar-menu">
+                <li><a href="#" class="active" onclick="switchMenu('edit-landing', this)">Edit Landing Page</a></li>
+                <li><a href="#" onclick="switchMenu('data-tamu', this)">Data Tamu & Ucapan</a></li>
+            </ul>
+            <button class="btn-logout" onclick="handleLogout()">Keluar</button>
+        </div>
+
+        <!-- MAIN CONTENT -->
+        <div class="main-content">
+
+            <!-- SECTION PENGATURAN LANDING PAGE -->
+            <div id="edit-landing" class="content-section active">
+                <div class="header-title">
+                    <h1 class="font-serif">Pengaturan Landing Page</h1>
+                    <p>Kelola informasi mempelai, waktu acara, dan galeri foto undangan.</p>
+                </div>
+
+                <div class="card-box">
+                    <!-- Tab Menu Navigation -->
+                    <div class="tab-navigation">
+                        <button class="tab-btn" onclick="switchTab('tab-mempelai', this)">Info Mempelai</button>
+                        <button class="tab-btn" onclick="switchTab('tab-acara', this)">Waktu & Lokasi</button>
+                        <button class="tab-btn active" onclick="switchTab('tab-galeri', this)">Galeri & Story</button>
+                    </div>
+
+                    <!-- Tab Content 1: Info Mempelai -->
+                    <div id="tab-mempelai" class="tab-content">
+                        <div class="form-group">
+                            <label>Nama Pengantin Wanita</label>
+                            <input type="text" class="form-control" value="Ayu">
+                        </div>
+                        <div class="form-group">
+                            <label>Nama Pengantin Pria</label>
+                            <input type="text" class="form-control" value="Kevin">
+                        </div>
+                    </div>
+
+                    <!-- Tab Content 2: Waktu & Lokasi -->
+                    <div id="tab-acara" class="tab-content">
+                        <div class="form-group">
+                            <label>Tanggal Resepsi</label>
+                            <input type="text" class="form-control" value="Rabu, 30 September 2026">
+                        </div>
+                        <div class="form-group">
+                            <label>Waktu Acara</label>
+                            <input type="text" class="form-control" value="08:00 - Selesai">
+                        </div>
+                        <div class="form-group">
+                            <label>Alamat Tempat Resepsi</label>
+                            <input type="text" class="form-control" value="Edelweiss Wedding Hall, Jakarta">
+                        </div>
+                    </div>
+
+                    <!-- Tab Content 3: Galeri & Story (TAMPILAN EXAK GAMBAR 1) -->
+                    <div id="tab-galeri" class="tab-content active">
+                        <div class="form-group">
+                            <label>Kutipan / Ayat Undangan</label>
+                            <textarea class="form-control"
+                                rows="3">Dan di antara tanda-tanda kekuasaan-Nya diciptakan-Nya untukmu pasangan hidup dari jenismu sendiri...</textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Upload Foto Prewedding (Multiple)</label>
+                            <input type="file" class="form-control" multiple>
+                        </div>
+                    </div>
+
+                    <!-- Tombol Simpan Perubahan -->
+                    <button class="btn-simpan" onclick="alert('Perubahan berhasil disimpan!')">Simpan Perubahan</button>
+                </div>
+            </div>
+
+            <!-- SECTION DATA TAMU -->
+            <div id="data-tamu" class="content-section">
+                <div class="header-title">
+                    <h1 class="font-serif">Manajemen Data Tamu</h1>
+                    <p>Rekapitulasi status dan jumlah konfirmasi kehadiran tamu.</p>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Total Tamu</h3>
+                        <p id="stat-total">3</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Hadir</h3>
+                        <p id="stat-hadir">1</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Tidak Hadir</h3>
+                        <p id="stat-tidak">1</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Pending</h3>
+                        <p id="stat-pending">1</p>
+                    </div>
+                </div>
+
+                <div class="card-box">
+                    <div class="card-header-flex">
+                        <h3 class="font-serif" style="font-size: 20px; color: var(--text-navy);">Daftar Undangan</h3>
+                        <button class="btn-simpan" style="padding: 8px 18px; font-size: 14px;"
+                            onclick="openModalTambah()">+ Tambah Tamu</button>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Nama Tamu</th>
+                                <th>Status</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tamu-tbody">
+                            <!-- Data Tamu Render -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- MODAL TAMBAH TAMU -->
+    <div class="modal" id="modal-tamu">
+        <div class="modal-box">
+            <span class="close-modal" onclick="closeModalTambah()">&times;</span>
+            <h3 class="font-serif" style="margin-bottom: 18px; color: var(--text-navy);">Tambah Tamu Undangan</h3>
+            <div class="form-group">
+                <label>Nama Tamu</label>
+                <input type="text" id="inp-nama-tamu" class="form-control" placeholder="Masukkan nama tamu...">
+            </div>
+            <button class="btn-simpan" style="width: 100%;" onclick="tambahTamu()">Simpan Data</button>
+        </div>
+    </div>
+
+    <script>
+        // Data Tamu Dummy
+        let daftarTamu = [
+            { id: 1, nama: "Budi Santoso", status: "Hadir" },
+            { id: 2, nama: "Siti Rahma", status: "Tidak Hadir" },
+            { id: 3, nama: "Ahmad Dani", status: "Pending" }
+        ];
+
+        function togglePass() {
+            const input = document.getElementById('login-pass');
+            input.type = input.type === 'password' ? 'text' : 'password';
+        }
+
+        // Login Handler (Validasi: admin / admin123)
+        function handleLogin(e) {
+            e.preventDefault();
+            const userInp = document.getElementById('login-user').value.trim();
+            const passInp = document.getElementById('login-pass').value.trim();
+            const errorMsg = document.getElementById('login-error');
+
+            if (userInp === 'admin' && passInp === 'admin123') {
+                errorMsg.style.display = 'none';
+                document.getElementById('login-view').style.display = 'none';
+                document.getElementById('dashboard-view').style.display = 'flex';
+                renderTamuTable();
+            } else {
+                errorMsg.style.display = 'block';
+            }
+        }
+
+        function handleLogout() {
+            document.getElementById('login-user').value = '';
+            document.getElementById('login-pass').value = '';
+            document.getElementById('login-error').style.display = 'none';
+            document.getElementById('dashboard-view').style.display = 'none';
+            document.getElementById('login-view').style.display = 'flex';
+        }
+
+        // Sidebar Navigation
+        function switchMenu(sectionId, element) {
+            document.querySelectorAll('.content-section').forEach(sec => sec.classList.remove('active'));
+            document.querySelectorAll('.sidebar-menu a').forEach(a => a.classList.remove('active'));
+
+            document.getElementById(sectionId).classList.add('active');
+            element.classList.add('active');
+        }
+
+        // Tab Navigation
+        function switchTab(tabId, element) {
+            document.querySelectorAll('.tab-content').forEach(tc => tc.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+
+            document.getElementById(tabId).classList.add('active');
+            element.classList.add('active');
+        }
+
+        // Render Data Tamu & Hitung Statistik
+        function renderTamuTable() {
+            const tbody = document.getElementById('tamu-tbody');
+            tbody.innerHTML = '';
+
+            let hadir = 0, tidak = 0, pending = 0;
+
+            daftarTamu.forEach((item, idx) => {
+                if (item.status === 'Hadir') hadir++;
+                else if (item.status === 'Tidak Hadir') tidak++;
+                else pending++;
+
+                let badgeClass = item.status === 'Hadir' ? 'badge-success' : (item.status === 'Tidak Hadir' ? 'badge-danger' : 'badge-warning');
+
+                tbody.innerHTML += `
+                    <tr>
+                        <td>${idx + 1}</td>
+                        <td><b>${item.nama}</b></td>
+                        <td><span class="badge ${badgeClass}">${item.status}</span></td>
+                        <td>
+                            <button class="btn-simpan" style="font-size: 12px; padding: 5px 12px; border-radius: 6px;" onclick="salinLink('${item.nama}')">Salin Link</button>
+                            <button class="btn-danger-sm" onclick="hapusTamu(${item.id})">Hapus</button>
+                        </td>
+                    </tr>
+                `;
+            });
+
+            document.getElementById('stat-total').innerText = daftarTamu.length;
+            document.getElementById('stat-hadir').innerText = hadir;
+            document.getElementById('stat-tidak').innerText = tidak;
+            document.getElementById('stat-pending').innerText = pending;
+        }
+
+        // Modal Logic
+        function openModalTambah() {
+            document.getElementById('modal-tamu').classList.add('active');
+        }
+
+        function closeModalTambah() {
+            document.getElementById('modal-tamu').classList.remove('active');
+            document.getElementById('inp-nama-tamu').value = '';
+        }
+
+        function tambahTamu() {
+            const nama = document.getElementById('inp-nama-tamu').value.trim();
+            if (!nama) return alert('Nama tamu wajib diisi!');
+
+            daftarTamu.push({
+                id: Date.now(),
+                nama: nama,
+                status: 'Pending'
+            });
+
+            closeModalTambah();
+            renderTamuTable();
+        }
+
+        function hapusTamu(id) {
+            if (confirm('Yakin ingin menghapus tamu ini?')) {
+                daftarTamu = daftarTamu.filter(t => t.id !== id);
+                renderTamuTable();
+            }
+        }
+
+        function salinLink(nama) {
+            const url = `https://undangan.com?to=${encodeURIComponent(nama)}`;
+            navigator.clipboard.writeText(url);
+            alert(`Link khusus untuk ${nama} berhasil disalin!`);
+        }
+
+        // Initial Render
+        renderTamuTable();
+    </script>
+</body>
+
+</html>
